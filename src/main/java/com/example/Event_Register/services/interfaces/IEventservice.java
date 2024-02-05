@@ -8,12 +8,3 @@ public interface IEventservice {
     public Event saveEvent(Event event);
     List<Event> getAllEvents();
 }
-
-
-//VB
-//public interface BookService {
-//    Book createBook(Book incomingBook);
-//    List<Book> getAllBooks();
-//    Book updateBook(Book toBeUpdatedBook);
-//
-//}

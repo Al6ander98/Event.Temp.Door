@@ -1,5 +1,5 @@
 package com.example.Event_Register.model;
-// Event.java
+
 import jakarta.persistence.*;
 import java.time.Instant;
 
@@ -7,15 +7,16 @@ import java.time.Instant;
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+   // private Long id;  // If you decide to use it, uncomment and use it as needed
 
-    private double temperature;
+    
 
-    @Column(columnDefinition = "TIMESTAMP")
-    private Instant timestamp;
+    public void setTimestampInUTC() {
+    }
+
+    public void setTemperatureCelsius(double temperatureCelsius) {
+    }
 
     public void setTimestamp(Instant now) {
     }
-
-    // getters and setters
 }
