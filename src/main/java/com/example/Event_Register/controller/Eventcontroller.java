@@ -1,6 +1,7 @@
 package com.example.Event_Register.controller;
 
 import com.example.Event_Register.model.Event;
+import com.example.Event_Register.model.EventRequest;
 import com.example.Event_Register.services.interfaces.IEventservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,10 +13,11 @@ import java.util.List;
 public class Eventcontroller {
         @Autowired
     private IEventservice eventservice;
+    private EventRequest Event;
 
-    public Eventcontroller(IEventservice eventservice) {
-        this.eventservice = eventservice;
-    }
+    //   public Eventcontroller(IEventservice eventservice) {
+   //     this.eventservice = eventservice;
+  //  }
 
     @GetMapping
     public List<Event> findAllEvents() {
@@ -29,22 +31,13 @@ public class Eventcontroller {
         event.setTimestampInUTC();
 
         // Save the event with timestamps
-        eventservice.saveEvent(event);
+        eventservice.saveEvent(Event );
     }
 
     @PostMapping("/saveWithTemperature")
-    public void saveEventWithTemperature(@RequestBody Event event, @RequestParam double temperatureCelsius) {
-        /*
-         Assuming the Event model has fields for timestamps and temperature
-         Save timestamps in UTC format
-        */
-        event.setTimestampInUTC();
-
-        // Save temperature in Celsius
-        event.setTemperatureCelsius(temperatureCelsius);
-
-        // Save the event with timestamps and temperature
-        eventservice.saveEvent(event);
+    public String saveEventWithTemperature(@RequestBody EventRequest eventRequest) {
+        eventservice.saveEvent(eventRequest);
+        return null;
     }
 }
 

@@ -7,14 +7,15 @@ import java.time.Instant;
 public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-   // private Long id;  // If you decide to use it, uncomment and use it as needed
-
+   private Long id;  // If you decide to use it, uncomment and use it as needed
+    private double temperatureCelsius;
     
 
     public void setTimestampInUTC() {
     }
 
     public void setTemperatureCelsius(double temperatureCelsius) {
+        this.temperatureCelsius = temperatureCelsius;
     }
 
     public void setTimestamp(Instant now) {
