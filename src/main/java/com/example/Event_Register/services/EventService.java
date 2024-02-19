@@ -22,8 +22,16 @@ public class EventService implements IEventservice {
         return eventRepository.save(incomingEvent);
     }
 
-    @Override
     public List<Event> getAllEvents() {
+        return null;
+    }
+    @Override
+    public List<Event> saveEvent(List<EventRequest> eventRequest){
+        return null;
+    }
+
+    @Override
+    public List<Event> getEventAboveTemperature(double temperature) {
         return null;
     }
 }

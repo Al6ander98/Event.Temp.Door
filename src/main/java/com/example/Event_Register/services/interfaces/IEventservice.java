@@ -7,5 +7,7 @@ import java.util.List;
 
 public interface IEventservice {
     Event saveEvent( EventRequest eventRequest);
+    List<Event> saveEvent(List<EventRequest> eventRequest);
+    List<Event> getEventAboveTemperature(double temperature);
     List<Event> getAllEvents();
 }

@@ -10,7 +10,7 @@ public class EventRequest {
     public void setTemperatureInCelsius(double temperatureInCelsius) {
         this.temperatureInCelsius = temperatureInCelsius;
     }
-
+    public EventRequest(){}
     public EventRequest(double temperatureInCelsius) {
         this.temperatureInCelsius = temperatureInCelsius;
     }
