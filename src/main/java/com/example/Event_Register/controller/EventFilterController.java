@@ -10,13 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Event")
+@RequestMapping("/Eventfilter")
 public class EventFilterController {
     @Autowired
     private IEventservice eventservice;
 
-    @GetMapping("/filterAbove35C")
+    @GetMapping("/filterAbove37C")
     public List<Event> filterTemperatureAbove35C(){
-        return eventservice.getEventAboveTemperature(35.0);
+
+        return eventservice.getEventAboveTemperature(37.0);
     }
 }
