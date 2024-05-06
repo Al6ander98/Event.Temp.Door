@@ -1,5 +1,8 @@
 package com.example.Event_Register.model;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class TemperatureAlertRequest {
     private double threshold;
 

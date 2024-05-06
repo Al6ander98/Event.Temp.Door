@@ -26,5 +26,11 @@ public class EventRegisterApplication implements CommandLineRunner {
 
 
 	}
-   // @EventListener(ApplicationReadyEvent.class)
+   @EventListener(ApplicationReadyEvent.class)
+   public void SendMail(){
+		javaMailSender.javaMailSender()( toEmail"eventregister72@gmail.com",
+	   subject "Event Test",
+	   body "")
+	   )
+   }
 }

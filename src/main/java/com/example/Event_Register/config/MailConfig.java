@@ -21,4 +21,5 @@ public class MailConfig {
         props.put("mail.smtp.starttls.enable", "true");
         return mailSender;
     }
+    //configures a JavaMailSenderImpl bean to send emails using Gmail's SMTP server with TLS enabled.
 }

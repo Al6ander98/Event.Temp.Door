@@ -18,10 +18,14 @@ public class EmailController {
     private IEventservice eventservice;
 
     @PostMapping("/sendTemperatureAlertEmail")
-    public ResponseEntity<String> sendTemperatureAlertEmail(@RequestBody TemperatureAlertRequest request) {
-        eventservice.sendTemperatureAlertEmail(request.getThreshold()); // Use the threshold from the request
+    public ResponseEntity<String> sendTemperatureAlertEmail(@RequestBody TemperatureAlertRequest request)
+    {
+        eventservice.sendTemperatureAlertEmail(request.getThreshold());
+        // Use the threshold from the request
         return ResponseEntity.status(HttpStatus.OK).body("Temperature alert email sent successfully!");
     }
+    //POST requests with temperature alert data
+    //it sends an email alert based on the provided temperature threshold and returns a success message.
 }
 
 

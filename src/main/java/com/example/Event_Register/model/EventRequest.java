@@ -1,5 +1,9 @@
 package com.example.Event_Register.model;
+import jakarta.persistence.Entity;
+
 import java.time.Instant;
+
+@Entity
 public class EventRequest {
     private double temperatureInCelsius;
     private Instant timestamp;

@@ -19,8 +19,8 @@ public class Eventcontroller {
     public List<Event> findAllEvents() {
         return eventservice.getAllEvents();
     }
-    @PostMapping("/saveEventInfo")
-    public Event saveEvent(@RequestBody @NotNull Event event) {
+
+    @PostMapping("/saveEventInfo")public Event saveEvent(@RequestBody @NotNull Event event) {
         event.setTimestamp(Instant.now()); // Set the current timestamp when creating the event
         return eventservice.saveEvent(event);
     }
@@ -28,5 +28,7 @@ public class Eventcontroller {
     public com.example.Event_Register.model.Event saveEventWithTemperature(@RequestBody EventRequest eventRequest) {
         return eventservice.saveEvent(eventRequest);
     }
+    //POST with event data including temperature information.
+    // it saves the event details along with the temperature and returns the saved event object.
 
 }
